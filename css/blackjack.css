@@ -1,0 +1,48 @@
+.buttons{
+  height: 100px;
+  top: 20px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+.label{
+  font-style: italic;
+  font-size: 1.2em;
+  color: orange;
+}
+
+#table{
+  position: relative;
+  top: 100px;
+  height: 500px;
+  width: 90%;
+  background-color: green;
+  padding: 15px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+#dealer-hand,
+#player-hand {
+  height: 150px;
+  width: auto;
+  background-color: aqua;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+
+}
+
+#dealer-hand > img,
+#player-hand > img {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.message{
+  position: relative;
+  text-align: center;
+  color: black;
+  margin-top: -30px;
+}
