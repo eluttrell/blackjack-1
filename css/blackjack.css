@@ -5,6 +5,14 @@
   position: relative;
   text-align: center;
 }
+#deal-button, #hit-button, #stand-button {
+    text-align: center;
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+    color: green;
+}
+
 .label{
   font-style: italic;
   font-size: 1.2em;
@@ -14,7 +22,7 @@
 #table{
   position: relative;
   top: 100px;
-  height: 500px;
+  height: 550px;
   width: 90%;
   background-color: green;
   padding: 15px;
@@ -44,5 +52,14 @@
   position: relative;
   text-align: center;
   color: black;
-  margin-top: -30px;
+  margin-top: -25px;
+}
+
+.wins{
+  border: 5px;
+  font-style: normal;
+  font-family: sans-serif;
+  color: blue;
+  text-align: center;
+  margin-top: -20px;
 }

@@ -2,22 +2,11 @@ var dealerCards = [];
 var playerCards = [];
 var deck = newDeck();
 var deck2 = newDeck();
+var playerWin = 0;
+var dealerWin = 0;
+var draw = 0;
 deck = deck.concat(deck).concat(deck).concat(deck).concat(deck);
-function end(cards) {
-    if (calculatePoints(cards) > 21) {
-      $('#hit-button').attr('disabled',true);
-      $('#stand-button').attr('disabled',true);
-      $('#deal-button').attr('disabled',false);
-      return 'bust';
-    }
-    else if (calculatePoints(cards) === 21) {
-      $('#hit-button').attr('disabled',true);
-      $('#stand-button').attr('disabled',true);
-      $('#deal-button').attr('disabled',false);
-      return 'blackjack';
-    }
 
-}
 
 $(function() {
   $('#hit-button').attr('disabled',true);
@@ -40,12 +29,16 @@ $(function() {
       $('#hit-button').attr('disabled',true);
       $('#deal-button').attr('disabled',true);
       $('.message').text('Player got blackjack');
+      playerWin++;
+      $('.playerw').text(playerWin);
     }
     else if (yp === 'blackjack') {
       $('#hit-button').attr('disabled',true);
       $('#stand-button').attr('disabled',true);
       $('#deal-button').attr('disabled',false);
       $('.message').text('Dealer got blackjack');
+      dealerWin++;
+      $('.dealerw').text(dealerWin);
 
     }
 
@@ -66,9 +59,13 @@ $(function() {
       $('.message').text('Player is busted');
       $('#hit-button').attr('disabled',true);
       $('#stand-button').attr('disabled',true);
+      dealerWin++;
+      $('.dealerw').text(dealerWin);
     }
     else if (calculatePoints(dealerCards) === calculatePoints(playerCards)){
       $('.message').text('Draw!');
+      draw++;
+      $('draw').text(draw);
       $('#hit-button').attr('disabled',true);
       $('#stand-button').attr('disabled',true);
       $('#deal-button').attr('disabled',false);
@@ -78,6 +75,8 @@ $(function() {
       $('#stand-button').attr('disabled',false);
       $('#deal-button').attr('disabled',true);
       $('.message').text('Player got blackjack');
+      playerWin++;
+      $('.playerw').text(playerWin);
     }
   });
   $('#stand-button').click(function() {
@@ -93,16 +92,24 @@ $(function() {
     if(y == 'bust'){$('.message').text('Dealer is busted');}
     else if (calculatePoints(dealerCards) === calculatePoints(playerCards)){
       $('.message').text('Draw!');
+      draw++;
+      $('draw').text(draw);
     }
     else if (y === 'blackjack') {
       $('.message').text('Dealer got blackjack');
+      dealerWin++;
+      $('.dealerw').text(dealerWin);
     }
 
     else if (calculatePoints(dealerCards) > calculatePoints(playerCards)){
       $('.message').text('Dealer Won');
+      dealerWin++;
+      $('.dealerw').text(dealerWin);
     }
     else if(calculatePoints(dealerCards) < calculatePoints(playerCards)){
       $('.message').text('Player Won');
+      playerWin++;
+      $('.playerw').text(playerWin);
     }
   });
 });
@@ -125,6 +132,20 @@ $(function() {
 
 
 
+function end(cards) {
+    if (calculatePoints(cards) > 21) {
+      $('#hit-button').attr('disabled',true);
+      $('#stand-button').attr('disabled',true);
+      $('#deal-button').attr('disabled',false);
+      return 'bust';
+    }
+    else if (calculatePoints(cards) === 21) {
+      $('#hit-button').attr('disabled',true);
+      $('#stand-button').attr('disabled',true);
+      $('#deal-button').attr('disabled',false);
+      return 'blackjack';
+    }
+}
 
 
 
