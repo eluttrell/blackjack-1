@@ -21,7 +21,7 @@
 
 #table{
   position: relative;
-  top: 100px;
+  top: 10px;
   height: 550px;
   width: 90%;
   background-color: green;
@@ -46,13 +46,15 @@
 #player-hand > img {
   margin-top: 5px;
   margin-left: 5px;
+  height: 90%;
 }
 
 .message{
   position: relative;
   text-align: center;
   color: black;
-  margin-top: -25px;
+  margin:auto ;
+  color: red;
 }
 
 .wins{
@@ -62,4 +64,11 @@
   color: blue;
   text-align: center;
   margin-top: -20px;
+}
+
+#placeBets{
+  position: relative;
+  margin-left: 900px;
+  margin-bottom: -100px;
+  box-sizing: border-box;
 }
